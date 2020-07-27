@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>    
+    <link rel="stylesheet" href="sandbox.css">
+</head>
+<body>
+	<div class="grid">
+		<div class="nav">
+            <h2><span class="white">Your</span><span class="lightText">App</span></h2>
+                <div class="headerElements">
+                    <img class="bellIcon" src="./Project 7/icons/icon-bell.svg" alt="">
+                    <img class="profileImg" src="./Project 7/images/member-1.jpg" alt="">
+                    <p>Member One</p>
+                </div>
+        </div>
+		<div class="side">
+            <div class="sideIcons">
+                <div><img class="dashboardIcon" src="Project 7/icons/icon-dashboard.svg" alt=""></div>
+                <div><img class="membersIcon" src="./Project 7/icons/icon-members.svg" alt=""></div>
+                <div><img class="visitsIcon" src="./Project 7/icons/icon-visits.svg" alt=""></div>
+                <div><img class="settingsIcon" src="./Project 7/icons/icon-settings.svg" alt=""></div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="dashboardElements">
+                <h3>Dashboard</h3>
+                    <div class="grayArea">
+                        <input type="text">
+                    </div>
+            </div>
+            <div class="alertBox">
+                <p><span class="white">Alert</span>This is an alert box for this specific user to read on their profile.</p>
+            </div>
+            <nav class="timelineNav">
+            </nav>
+            <div class="charts">
+                <div class="line"> <!-- add graph -->
+                    <h6>TRAFFIC</h6>
+                    <ul class="timelineTabs">
+                        <li>Hourly</li>
+                        <li>Daily</li>
+                        <li>Weekly</li>
+                        <li>Monthly</li>
+                    </ul>
+                </div>
+                <div class="bar"> <!-- add graph -->
+                    <h6>DAILY TRAFFIC</h6>
+                </div>
+                <div class="doughnut"> <!-- add graph -->
+                    <h6>MOBILE USERS</h6>
+                </div>
+            </div>
+
+            <div class="flexStatsContainer">
+                <h6>SOCIAL STATS</h6> <!-- cant get grid gap top not get bigger if h6 tag outside of div but inside it messes up the inline-block display - pushes all 3 elements to the right and becomes un-centered -->
+                <div class="Twitter">
+                    <img class="twitterImg" src="./Project 7/icons/icon-twitter.svg" alt="">
+                    <p>Twitter</p>
+                    <p>10,345</p>
+                </div>
+                <div class="Facebook">
+                    <img class="facebookImg" src="./Project 7/icons/icon-facebook.svg" alt="">
+                    <p>Facebook</p>
+                    <p>8,739</p>
+                </div>
+                <div class="Google">
+                    <img class="googleImg" src="./Project 7/icons/icon-google-plus.svg" alt="">
+                    <p>Google</p>
+                    <p>2,530</p>
+                </div>
+            </div>
+            <div class="panels"> <!-- grid is favoring more space on right side than the left side - why?? -->
+                <div class="newMembers">
+                    <h6>NEW MEMBERS</h6>
+                    <img src="./Project 7/images/member-1.jpg" alt="">
+                    <p>Victoria Chambers</p>
+                    <p>victoria.chambers80@example.com</p>
+                    <p>10/15/15</p>
+                    <img src="./Project 7/images/member-2.jpg" alt="">
+                    <p>Dale Byrd</p>
+                    <p>dale.byrd52@example.com</p>
+                    <p>10/15/15</p>
+                    <img src="./Project 7/images/member-3.jpg" alt="">
+                    <p>Dawn Wood</p>
+                    <p>dawn.wood16@example.com</p>
+                    <p>10/15/15</p>
+                    <img src="./Project 7/images/member-4.jpg" alt="">
+                    <p>Dan Oliver</p>
+                    <p>dan.oliver82@example.com</p>
+                    <p>10/15/15</p> <!-- img and text disappears in grid early on -->
+                </div>
+                <div class="recentActivity">
+                    <h6>RECENT ACTIVITY</h6>
+                    <img src="./Project 7/images/member-1.jpg" alt="">
+                    <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                    <p>4 hours ago</p>
+                    <img src="./Project 7/images/member-2.jpg" alt="">
+                    <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
+                    <p>5 hours ago</p>
+                    <img src="./Project 7/images/member-3.jpg" alt="">
+                    <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                    <p>5 hours ago</p>
+                    <img src="./Project 7/images/member-4.jpg" alt="">
+                    <p>Dan Oliver posted on YourApp's SEO Tips</p>
+                    <p>1 day ago</p>
+                </div>
+                <div class="userMessages">
+                    <h6>MESSAGE USER</h6>
+                    <input type="text" placeholder="Search for User">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Message for User"></textarea>
+                    <button>Send</button>
+                </div>
+                <div class="userSettings">
+                    <h6>SETTINGS</h6>
+                    <p>Send Email Notifications</p> <!-- add on/off slider  -->
+                    <p>Set Profile to Public</p> <!-- add on/off slider -->
+                    <input type="text"> <!-- make this a drop down -->
+                    <button>Save</button>
+                    <button>Cancel</button>
+                </div>
+            </div>
+
+        </div>
+	</div>
+<script src="sandbox.js"></script>
+</body>
+</html>
