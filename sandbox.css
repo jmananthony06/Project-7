@@ -252,6 +252,76 @@ h6 {
     background-color: white;
 }
 
+.newMembers p,
+.recentActivity p,
+.userMessages p,
+.userSettings p
+ {
+    font-size: 14px;
+}
+
+.userMessages input,
+.userMessages textarea,
+.userMessages button {
+    display: flex;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+/* tried display flex and flex-wrap: wrap on images in panels and does nothing - need imgs and text to fit in their respective panels and not bleed over into another one or disappear behind other panel elements  */
+
+.userMessages button {
+    background-color: rgb(115, 121, 186);
+    border: none;
+    color: white;
+    width: 88%;
+    height: 40px;
+    text-align: center; /* why isnt "send" text in center like the buttons in settings? */
+    margin-top: 5%;
+    border-radius: 5px;
+}
+
+.userMessages input {
+    width: 85%;
+    border-color: rgba(0, 0, 0, 0.164);
+    padding: 8px;
+    margin-bottom: 15px;
+}
+
+.userMessages textarea {
+    width: 89%;
+    border-color: rgba(0, 0, 0, 0.178);
+    /* cant figure out how to remove manual sizing of textarea size from lower right hand corner of element */
+    height: 35%;
+    border-radius: 5px;
+}
+
+/* cant get buttons aligned flush from each panel */
+
+.userSettings p {
+    margin-top: 35px;
+    margin-left: 15px;
+} /* need on/off toggle section next to <p> text */
+
+.userSettings input {
+    display: flex;
+    margin: auto;
+    margin-top: 10%;
+    width: 50%;
+    padding: 8px;
+}
+
+.userSettings button {
+    margin-left: 10%;
+    margin-top: 5%;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(115, 121, 186);
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
 /*******************
 ****Mobile Query****
 *******************/
