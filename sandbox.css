@@ -4,8 +4,12 @@ body{
 }
 
 h6 {
-    margin-left: 15px;
+    margin-left: auto; /* seems to only affect Social Stats h6 tag */
 }
+
+/*********************************/
+/**** HEADER NAV (HORIZONTAL) ****/
+/*********************************/
 
 .grid {
     min-height: 100vh;
@@ -23,6 +27,12 @@ h6 {
     /* cant add height? why? */
 }
 
+.nav h2 {
+    margin-right: auto;
+    margin-left: 30px;
+    /* when margin-left auto - goes all the way right, and margin-right auto goes all the way left - wh?? */
+}
+
 .white {
     color: white;
 }
@@ -34,37 +44,48 @@ h6 {
 
 .headerElements {
     display: flex;
-    /* cant get this bunch of elements i wrapped in a div on the other side with any flex-end or float properties or values - why not? */
+    justify-items: flex-end;
+    margin: auto;
+    margin-right: 40px;
 }
 
 .bellIcon {
-    display: flex;
-    height: 10px;
-    width: 10px;
+    height: 25px;
+    width: 25px;
+    margin: auto;
+    margin-right: 30px;
+    /* needs green notification color circle near icon upper right of it next to  */
+}
+
+.lineBreak {
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    margin-right: 30px;
 }
 
 .profileImg {
-    border-radius: 90%; /* cant get this to shrink any more - why not? */
+    border-radius: 90%; /* cant get this to shrink any more - why not? also doesnt look right */
     height: 5vh;
     width: 5vw;
 }
 
-.nav h2 {
-    margin-left: 15px; /* better way to position this? */
-}
-
 .nav p {
     color: white;
+    margin-left: 10px;
 }
+
+/*******************************/
+/***** SIDE NAV (VERTICAL) *****/
+/*******************************/
 
 .side{
     grid-area: side;
     background-color: rgb(76, 77, 111);
+    display: flex;
 }
 
 .sideIcons {
-    flex-direction: column;
-    margin-top: 30px;
+    /* cant get icons to be center vertical and close to top of container right under "YourApp area */
 }
 
 .dashboardIcon,
@@ -74,37 +95,38 @@ h6 {
     height: 3vh;
     width: 3vw;
     margin: 10px;
-    margin-left: 25px; /* there's a better way to center this but nothing im trying currently works - come back to this later */
+    /* there's a better way to center this but nothing im trying currently works - come back to this later - maybe it's fine and its all in my head */
 }
 
-/* add hover efect with green vertical line hugging left side of screen with same height as icon with 5-10px space between icon and left side of page as shown in example layout .png file */
+/* add :hover effect with ::before and ::after pseudo CSS and make it green vertical line hugging left side of screen with same height as icon itself with 5-10px space between icon and left side of page as shown in example layout .png file */
 
 .main {
     grid-area: main;
-    background-color: orange;
+    background-color: rgba(0, 0, 0, 0.075);
 }
 
 .dashboardElements {
     display: flex;
 }
 
-.main h3 {
-    margin-left: 15px;
+.dashboardElements h3 {
+    margin-left: auto;
     color: rgba(0, 0, 0, 0.596);
+    font-size: 30px;
 }
 
 .grayArea {
     background-color: rgba(128, 128, 128, 0.384);
     padding: 10px;
-    width: 80%;
+    width: 75%;
     margin-left: auto;
 }
 
-.main input {
+.dashboardElements input {
     padding: 5px;
     border-radius: 5px;
     min-width: 35%;
-    margin-left: 365px; /* eventully cuts on input field, tried min and max width and still not output i wanted */
+    margin: auto; /* eventully cuts on input field, tried min and max width and still not output i wanted */
     /* cant get input element to position to the left */
 }
 
