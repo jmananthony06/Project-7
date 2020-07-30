@@ -1,10 +1,15 @@
-body{
-    margin:0;
-    padding:0;
+* {
+    outline: 1px solid red;
 }
 
-h6 {
-    margin-left: auto; /* seems to only affect Social Stats h6 tag */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    margin-left: 28px;
+    color: rgba(0, 0, 0, 0.5)
 }
 
 /*********************************/
@@ -20,7 +25,7 @@ h6 {
     grid-template-areas: 'nav nav' 'side main';
 }
 
-.nav{
+.nav {
     display: flex;
     grid-area: nav;  
     background-color: rgb(116, 121, 186);
@@ -64,7 +69,7 @@ h6 {
 }
 
 .profileImg {
-    border-radius: 90%; /* cant get this to shrink any more - why not? also doesnt look right */
+    border-radius: 90%; /* cant get this to shrink any more - why not? also doesnt look right - refer to other css file made manipulating img from css directly*/
     height: 5vh;
     width: 5vw;
 }
@@ -78,14 +83,38 @@ h6 {
 /***** SIDE NAV (VERTICAL) *****/
 /*******************************/
 
-.side{
+.side {
     grid-area: side;
     background-color: rgb(76, 77, 111);
     display: flex;
+    justify-content: space-around;
+
 }
 
 .sideIcons {
-    /* cant get icons to be center vertical and close to top of container right under "YourApp area */
+    width: 100%;
+    margin: 10px;
+}
+
+.sideHover {
+    position: relative;
+} 
+
+.sideHover::after {
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    border-radius: 3px;
+    background-color: rgb(102, 192, 136);
+    content: "";
+    top: 0;
+    left: 0;
+    transition: .5s
+}
+
+.sideHover:hover::after {
+    opacity: 1;
 }
 
 .dashboardIcon,
@@ -95,14 +124,24 @@ h6 {
     height: 3vh;
     width: 3vw;
     margin: 10px;
-    /* there's a better way to center this but nothing im trying currently works - come back to this later - maybe it's fine and its all in my head */
+    margin-top: 22px;
 }
 
 /* add :hover effect with ::before and ::after pseudo CSS and make it green vertical line hugging left side of screen with same height as icon itself with 5-10px space between icon and left side of page as shown in example layout .png file */
 
 .main {
     grid-area: main;
-    background-color: rgba(0, 0, 0, 0.075);
+    background-color: rgba(0, 0, 0, 0.050);
+}
+
+.grayArea {
+    background-color: rgba(128, 128, 128, 0.123);
+    width: 90%;
+    margin-left: auto;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .dashboardElements {
@@ -111,48 +150,79 @@ h6 {
 
 .dashboardElements h3 {
     margin-left: auto;
-    color: rgba(0, 0, 0, 0.596);
-    font-size: 30px;
-}
-
-.grayArea {
-    background-color: rgba(128, 128, 128, 0.384);
-    padding: 10px;
-    width: 75%;
-    margin-left: auto;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .dashboardElements input {
     padding: 5px;
     border-radius: 5px;
-    min-width: 35%;
-    margin: auto; /* eventully cuts on input field, tried min and max width and still not output i wanted */
-    /* cant get input element to position to the left */
+    min-width: 25%;
+    height: 15px;
+    margin: 20px;
+     /* put in magnifying glass inside input element on right side */
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.349);
+    font-size: 14px;
 }
 
 .alertBox {
-    width: 90%;
-    height: 25px;
+    width: 96%;
+    height: 20px;
     margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 6px;
     background-color: rgb(115, 121, 186);
-    border-radius: 2px;
-    /* cant get Alert and text that follows centered in the div or spaces from one another - why? */
+    border-radius: 4px;
+/* insert an interactive 'x' button at the end of the alert message to enable closing out of the prompt  */
 }
 
 .alertBox p {
-    text-align: center;
+    text-align: left;
+    margin: auto;
+    color: white;
 }
 
+.alertBox span {
+    margin-right: 12px;
+}
+
+/*******************************/
+/***** TRAFFIC AND TIMELINE ****/
+/*******************************/
+
 .timelineNav {
-    display: flex; /* no matter what properties and values i give to the parent and child elements it doesn't budge - why? */
+    display: flex;
+    align-items: center;
+}
+
+.timelineTabs {
+    list-style: none;
+    display: inline;
+    margin-left: auto;
+    margin-right: 30px;
 }
 
 .timelineTabs li {
-    list-style: none;
     display: inline;
-    justify-content: space-between; /* aligned w/ traffic text but not flex-ending or space-around */
-    margin: auto;
+    margin-left: 30px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 3px 10px;
 }
+
+.timelineTabs li:hover {
+    color: white;
+    background-color: rgba(102, 192, 136);
+    transition: .2s;
+    border-radius: 20px;
+}
+/*******************************/
+/*********** CHARTS ************/
+/*******************************/
 
 .charts {
     display: grid;
@@ -180,41 +250,35 @@ h6 {
     grid-area: doughnut;
 }
 
+/*******************************/
+/***** SOCIAL STATS DIV ********/
+/*******************************/
+
 .flexStatsContainer {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 100%;
-    height: 25vh;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.151);
 } /* nothing fitting properly inside of the 3 social stats containers  */
 
-.Twitter {
-    display: inline-block;
-    width: 24%;
-    height: 8vh;
-    background-color: rgba(0, 0, 0, 0.062);
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 8px;
+.socialStats {
+    width: 100%;
+    margin-bottom: auto;
 }
 
-.Facebook {
-    display: inline-block;
-    width: 24%;
-    height: 8vh;
-    background-color: rgba(0, 0, 0, 0.062);
-    margin: auto;
-    margin-top: 100px;
-    border-radius: 8px;
-}
-
+.Twitter,
+.Facebook,
 .Google {
-    display: inline-block;
-    width: 24%;
+    display: inline;
+    width: 27.5%;
     height: 8vh;
-    background-color: rgba(0, 0, 0, 0.062);
-    margin: auto;
-    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.060);
+    margin: 25px;
+    margin-bottom: 50px;
+    padding: 20px;
+    margin-right: auto;
     border-radius: 8px;
 }
 /* bottom 4 square pannel missing a top grid gap line and not working no matter how i write it - figure out why later */
@@ -224,8 +288,12 @@ h6 {
 .googleImg {
     /* can't get img to center on left side of social container boxes - why? */
     height: 5vh;
-    width: 5vw;
+    width: 3vw;
 }
+
+/*******************************/
+/******* LOWER 4 PANELS ********/
+/*******************************/
 
 .panels {
     display: grid;
@@ -236,6 +304,8 @@ h6 {
     grid-gap: 1px;
 }
 
+/********** New Members *********/
+
 .newMembers {
     grid-area: newMembers;
     height: 300px;
@@ -244,9 +314,11 @@ h6 {
 }
 
 .newMembers img {
-    height:3vh;
+    height: 3vh;
     width: 3vw;
 }
+
+/********** Recent Activity **********/
 
 .recentActivity {
     grid-area: recentActivity;
@@ -256,20 +328,62 @@ h6 {
 }
 
 .recentActivity img {
-    height:3vh;
+    height: 3vh;
     width: 3vw;
 }
 
+.imgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+/********** Message User **********/
+
 .userMessages {
     grid-area: userMessages;
-    height: 300px;
+    height: 100%;
     width: 100%;
     background-color: white;
 }
 
+.userMessages input,
+.userMessages textarea {
+    display: flex;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.userMessages input {
+    width: 92%;
+    border-color: rgba(0, 0, 0, 0.164);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.userMessages textarea {
+    width: 93.5%;
+    border-color: rgba(0, 0, 0, 0.178);
+    /* cant figure out how to remove manual sizing of textarea size from lower right hand corner of element */
+    height: 35%;
+    border-radius: 5px;
+}
+
+.userMessages button {
+    background-color: rgb(115, 121, 186);
+    border: none;
+    color: white;
+    width: 94%;
+    height: 40px;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+/********** User Settings **********/
+
 .userSettings {
     grid-area: userSettings;
-    height: 300px;
+    height: 100%;
     width: 100%;
     background-color: white;
 }
@@ -282,61 +396,30 @@ h6 {
     font-size: 14px;
 }
 
-.userMessages input,
-.userMessages textarea,
-.userMessages button {
-    display: flex;
-    margin: auto;
-    margin-bottom: 5px;
-}
-
 /* tried display flex and flex-wrap: wrap on images in panels and does nothing - need imgs and text to fit in their respective panels and not bleed over into another one or disappear behind other panel elements  */
-
-.userMessages button {
-    background-color: rgb(115, 121, 186);
-    border: none;
-    color: white;
-    width: 88%;
-    height: 40px;
-    text-align: center; /* why isnt "send" text in center like the buttons in settings? */
-    margin-top: 5%;
-    border-radius: 5px;
-}
-
-.userMessages input {
-    width: 85%;
-    border-color: rgba(0, 0, 0, 0.164);
-    padding: 8px;
-    margin-bottom: 15px;
-}
-
-.userMessages textarea {
-    width: 89%;
-    border-color: rgba(0, 0, 0, 0.178);
-    /* cant figure out how to remove manual sizing of textarea size from lower right hand corner of element */
-    height: 35%;
-    border-radius: 5px;
-}
 
 /* cant get buttons aligned flush from each panel */
 
 .userSettings p {
-    margin-top: 35px;
-    margin-left: 15px;
+    margin-top: 40px;
+    margin-left: 27px;
 } /* need on/off toggle section next to <p> text */
 
 .userSettings input {
     display: flex;
     margin: auto;
-    margin-top: 10%;
-    width: 50%;
+    margin-top: 4.5%;
+    width: 92%;
     padding: 8px;
 }
 
 .userSettings button {
-    margin-left: 10%;
-    margin-top: 5%;
-    width: 150px;
+    margin-top: 2%;
+    margin-left: 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45.7%;
     height: 40px;
     background-color: rgb(115, 121, 186);
     border: none;

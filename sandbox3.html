@@ -3,6 +3,7 @@
 <head>
     <title></title>    
     <link rel="stylesheet" href="sandbox.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script> -->
 </head>
 <body>
 	<div class="grid">
@@ -16,45 +17,47 @@
                 </div>
         </div>
 		<div class="side">
-            <div class="sideIcons">
-                <div><img class="dashboardIcon" src="./icons/icon-dashboard.svg" alt=""></div>
-                <div><img class="membersIcon" src="./icons/icon-members.svg" alt=""></div>
-                <div><img class="visitsIcon" src="./icons/icon-visits.svg" alt=""></div>
-                <div><img class="settingsIcon" src="./icons/icon-settings.svg" alt=""></div>
+            <div class="sideIcons"> <!-- cant figure out how this green vertical hover line appears to the left of the vertical icon nav items - wrapping icons in divs isn't working -->
+                    <div class="sideHover"><img class="dashboardIcon" src="./icons/icon-dashboard.svg" alt=""></div>
+                    <div class="sideHover"><img class="membersIcon" src="./icons/icon-members.svg" alt=""></div>
+                    <div class="sideHover"><img class="visitsIcon" src="./icons/icon-visits.svg" alt=""></div>
+                    <div class="sideHover"><img class="settingsIcon" src="./icons/icon-settings.svg" alt=""></div>
             </div>
         </div>
         <div class="main">
             <div class="dashboardElements">
                 <h3>Dashboard</h3>
                     <div class="grayArea">
-                        <input type="text">
+                        <input type="text" placeholder="Search">
                     </div>
             </div>
             <div class="alertBox">
-                <p><span class="white">Alert</span>This is an alert box for this specific user to read on their profile.</p>
+                <p><span class="white"><strong>Alert</strong></span>This is an alert box for this specific user to read on their profile containing important information. If this content isn't important, please close out this window.</p>
             </div>
+            <div>
             <nav class="timelineNav">
+                <h5>TRAFFIC</h5>
+                <ul class="timelineTabs">
+                    <li>Hourly</li>
+                    <li>Daily</li>
+                    <li>Weekly</li>
+                    <li>Monthly</li>
+                </ul>
             </nav>
             <div class="charts">
-                <div class="line"> <!-- add graph -->
-                    <h6>TRAFFIC</h6>
-                    <ul class="timelineTabs">
-                        <li>Hourly</li>
-                        <li>Daily</li>
-                        <li>Weekly</li>
-                        <li>Monthly</li>
-                    </ul>
+                <div class="line">
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </div>
-                <div class="bar"> <!-- add graph -->
-                    <h6>DAILY TRAFFIC</h6>
+                <div class="bar">
+                    <h5>DAILY TRAFFIC</h5>
                 </div>
-                <div class="doughnut"> <!-- add graph -->
-                    <h6>MOBILE USERS</h6>
+                <div class="doughnut">
+                    <h5>MOBILE USERS</h5>
                 </div>
             </div>
 
             <div class="flexStatsContainer">
-                <h6>SOCIAL STATS</h6> <!-- cant get grid gap top not get bigger if h6 tag outside of div but inside it messes up the inline-block display - pushes all 3 elements to the right and becomes un-centered -->
+                <h5 class="socialStats">SOCIAL STATS</h5> <!-- cant get grid gap top not get bigger if h5 tag outside of div but inside it messes up the inline-block display - pushes all 3 elements to the right and becomes un-centered -->
                 <div class="Twitter">
                     <img class="twitterImg" src="./icons/icon-twitter.svg" alt="">
                     <p>Twitter</p>
@@ -71,52 +74,56 @@
                     <p>2,530</p>
                 </div>
             </div>
-            <div class="panels"> <!-- grid is favoring more space on right side than the left side - why?? -->
+            <div class="panels">
                 <div class="newMembers">
-                    <h6>NEW MEMBERS</h6>
-                    <img src="./images/member-1.jpg" alt="">
-                    <p>Victoria Chambers</p>
-                    <p>victoria.chambers80@example.com</p>
-                    <p>10/15/15</p>
-                    <img src="./images/member-2.jpg" alt="">
-                    <p>Dale Byrd</p>
-                    <p>dale.byrd52@example.com</p>
-                    <p>10/15/15</p>
-                    <img src="./images/member-3.jpg" alt="">
-                    <p>Dawn Wood</p>
-                    <p>dawn.wood16@example.com</p>
-                    <p>10/15/15</p>
-                    <img src="./images/member-4.jpg" alt="">
-                    <p>Dan Oliver</p>
-                    <p>dan.oliver82@example.com</p>
-                    <p>10/15/15</p> <!-- img and text disappears in grid early on -->
+                    <h5>NEW MEMBERS</h5>
+                        <div class="imgContainer">
+                            <img src="./images/member-1.jpg" alt="">
+                                <p>Victoria Chambers</p>
+                                <p>victoria.chambers80@example.com</p>
+                                <p>10/15/15</p>
+                            <img src="./images/member-2.jpg" alt="">
+                                <p>Dale Byrd</p>
+                                <p>dale.byrd52@example.com</p>
+                                <p>10/15/15</p>
+                            <img src="./images/member-3.jpg" alt="">
+                                <p>Dawn Wood</p>
+                                <p>dawn.wood16@example.com</p>
+                                <p>10/15/15</p>
+                            <img src="./images/member-4.jpg" alt="">
+                                <p>Dan Oliver</p>
+                                <p>dan.oliver82@example.com</p>
+                                <p>10/15/15</p> <!-- how to get aligned like mockup / now have all content in box and no longer bleeds off behind other panels -->
+                        </div>
                 </div>
                 <div class="recentActivity">
-                    <h6>RECENT ACTIVITY</h6>
-                    <img src="./images/member-1.jpg" alt="">
-                    <p>Victoria Chambers commented on YourApp's SEO Tips</p>
-                    <p>4 hours ago</p>
-                    <img src="./images/member-2.jpg" alt="">
-                    <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
-                    <img src="./images/member-3.jpg" alt="">
-                    <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-                    <p>5 hours ago</p>
-                    <img src="./images/member-4.jpg" alt="">
-                    <p>Dan Oliver posted on YourApp's SEO Tips</p>
-                    <p>1 day ago</p>
+                    <h5>RECENT ACTIVITY</h5>
+                    <div class="imgContainer">
+                        <img src="./images/member-1.jpg" alt="">
+                            <p>Victoria Chambers commented on YourApp's SEO Tips</p>
+                            <p>4 hours ago</p>
+                        <img src="./images/member-2.jpg" alt="">
+                            <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
+                            <p>5 hours ago</p>
+                        <img src="./images/member-3.jpg" alt="">
+                            <p>Dawn Wood commented on Facebook's Changes for 2016</p>
+                            <p>5 hours ago</p>
+                        <img src="./images/member-4.jpg" alt="">
+                            <p>Dan Oliver posted on YourApp's SEO Tips</p>
+                            <p>1 day ago</p>
+                    </div>
                 </div>
                 <div class="userMessages">
-                    <h6>MESSAGE USER</h6>
+                    <h5>MESSAGE USER</h5>
                     <input type="text" placeholder="Search for User">
                     <textarea name="" id="" cols="30" rows="10" placeholder="Message for User"></textarea>
                     <button>Send</button>
                 </div>
                 <div class="userSettings">
-                    <h6>SETTINGS</h6>
+                    <h5>SETTINGS</h5>
                     <p>Send Email Notifications</p> <!-- add on/off slider  -->
                     <p>Set Profile to Public</p> <!-- add on/off slider -->
-                    <input type="text"> <!-- make this a drop down -->
+                    <input type="text" placeholder="Select Timezone"> <!-- make this a drop down -->
                     <button>Save</button>
                     <button>Cancel</button>
                 </div>
@@ -124,6 +131,6 @@
 
         </div>
 	</div>
-<script src="sandbox.js"></script>
+<!-- <script src="sandbox.js"></script> -->
 </body>
 </html>
