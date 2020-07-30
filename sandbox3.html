@@ -3,21 +3,23 @@
 <head>
     <title></title>    
     <link rel="stylesheet" href="sandbox.css">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
 </head>
 <body>
 	<div class="grid">
 		<div class="nav">
             <h2><span class="white">Your</span><span class="lightText">App</span></h2>
                 <div class="headerElements">
-                    <img class="bellIcon" src="./icons/icon-bell.svg" alt="">
+                    <div class="greenDot">
+                        <img class="bellIcon" src="./icons/icon-bell.svg" alt="">
+                    </div>
                     <div class="lineBreak"></div>
                     <img class="profileImg" src="./images/member-1.jpg" alt="">
                     <p>Member One</p>
                 </div>
         </div>
 		<div class="side">
-            <div class="sideIcons"> <!-- cant figure out how this green vertical hover line appears to the left of the vertical icon nav items - wrapping icons in divs isn't working -->
+            <div class="sideIcons">
                     <div class="sideHover"><img class="dashboardIcon" src="./icons/icon-dashboard.svg" alt=""></div>
                     <div class="sideHover"><img class="membersIcon" src="./icons/icon-members.svg" alt=""></div>
                     <div class="sideHover"><img class="visitsIcon" src="./icons/icon-visits.svg" alt=""></div>
@@ -46,18 +48,20 @@
             </nav>
             <div class="charts">
                 <div class="line">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart"></canvas>
                 </div>
                 <div class="bar">
                     <h5>DAILY TRAFFIC</h5>
+                    <canvas id="myBar"></canvas>
                 </div>
                 <div class="doughnut">
                     <h5>MOBILE USERS</h5>
+                    <canvas id="myDoughnut"></canvas>
                 </div>
             </div>
 
             <div class="flexStatsContainer">
-                <h5 class="socialStats">SOCIAL STATS</h5> <!-- cant get grid gap top not get bigger if h5 tag outside of div but inside it messes up the inline-block display - pushes all 3 elements to the right and becomes un-centered -->
+                <h5 class="socialStats">SOCIAL STATS</h5>
                 <div class="Twitter">
                     <img class="twitterImg" src="./icons/icon-twitter.svg" alt="">
                     <p>Twitter</p>
@@ -74,44 +78,65 @@
                     <p>2,530</p>
                 </div>
             </div>
+
             <div class="panels">
                 <div class="newMembers">
                     <h5>NEW MEMBERS</h5>
                         <div class="imgContainer">
+                            <div class="memberBoxes">
                             <img src="./images/member-1.jpg" alt="">
-                                <p>Victoria Chambers</p>
-                                <p>victoria.chambers80@example.com</p>
-                                <p>10/15/15</p>
-                            <img src="./images/member-2.jpg" alt="">
-                                <p>Dale Byrd</p>
-                                <p>dale.byrd52@example.com</p>
-                                <p>10/15/15</p>
-                            <img src="./images/member-3.jpg" alt="">
-                                <p>Dawn Wood</p>
-                                <p>dawn.wood16@example.com</p>
-                                <p>10/15/15</p>
-                            <img src="./images/member-4.jpg" alt="">
-                                <p>Dan Oliver</p>
-                                <p>dan.oliver82@example.com</p>
-                                <p>10/15/15</p> <!-- how to get aligned like mockup / now have all content in box and no longer bleeds off behind other panels -->
+                                <p>Victoria Chambers
+                                <br>victoria.chambers80@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-2.jpg" alt="">
+                                <p>Dale Byrd
+                                <br>dale.byrd52@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-3.jpg" alt="">
+                                <p>Dawn Wood
+                                <br>dawn.wood16@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-4.jpg" alt="">
+                                <p>Dan Oliver
+                                <br>dan.oliver82@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
                         </div>
                 </div>
-                <div class="recentActivity">
+                <div class="newMembers recentActivity">
                     <h5>RECENT ACTIVITY</h5>
-                    <div class="imgContainer">
-                        <img src="./images/member-1.jpg" alt="">
-                            <p>Victoria Chambers commented on YourApp's SEO Tips</p>
-                            <p>4 hours ago</p>
-                        <img src="./images/member-2.jpg" alt="">
-                            <p>Dale Byrd liked the post Facebook's Changes for 2016</p>
-                            <p>5 hours ago</p>
-                        <img src="./images/member-3.jpg" alt="">
-                            <p>Dawn Wood commented on Facebook's Changes for 2016</p>
-                            <p>5 hours ago</p>
-                        <img src="./images/member-4.jpg" alt="">
-                            <p>Dan Oliver posted on YourApp's SEO Tips</p>
-                            <p>1 day ago</p>
-                    </div>
+                        <div class="imgContainer">
+                            <div class="memberBoxes">
+                            <img src="./images/member-1.jpg" alt="">
+                                <p>Victoria Chambers
+                                <br>victoria.chambers80@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-2.jpg" alt="">
+                                <p>Dale Byrd
+                                <br>dale.byrd52@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-3.jpg" alt="">
+                                <p>Dawn Wood
+                                <br>dawn.wood16@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                            <div class="memberBoxes">
+                                <img src="./images/member-4.jpg" alt="">
+                                <p>Dan Oliver
+                                <br>dan.oliver82@example.com</p>
+                                <p class="date">10/15/15</p>
+                                </div>
+                        </div>
                 </div>
                 <div class="userMessages">
                     <h5>MESSAGE USER</h5>
@@ -131,6 +156,6 @@
 
         </div>
 	</div>
-<!-- <script src="sandbox.js"></script> -->
+<script src="sandbox.js"></script>
 </body>
 </html>
