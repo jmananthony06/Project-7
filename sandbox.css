@@ -1,6 +1,6 @@
-* {
+/* * {
     outline: 1px solid red;
-}
+} */
 
 body {
     margin: 0;
@@ -346,26 +346,30 @@ input::placeholder {
     background-color: rgb(115, 121, 186);
     border-radius: 50%;
     top: 50%;
-    left: 25%;
+    left: 80px;
     height: 85px;
     width: 85px;
     transform: translate(-50%, -50%);
 }
 
 .pColor {
-
+    color: rgb(115, 121, 186);
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .Twitter p,
 .Facebook p,
 .Google p {
     margin-top: 5px;
-    margin-left: 125px;
+    margin-left: 150px;
     margin-bottom: 10px;
 }
 
 .numSize {
-    font-size: 50px; /* has no effect ?! */
+    font-size: 45px;
+    color: black;
+    font-weight: 100;
 }
 
 /*******************************/
