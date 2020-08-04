@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>    
     <link rel="stylesheet" href="sandbox.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
@@ -30,11 +31,13 @@
             <div class="dashboardElements">
                 <h3>Dashboard</h3>
                     <div class="grayArea">
-                        <input type="text" placeholder="Search"> <!-- add magnifying glass inside of input -->
+                        <div class="inputRelative">
+                            <input type="text" placeholder="Search"><div class="mag"></div>
+                        </div>
                     </div>
             </div>
-            <div class="alertBox">
-                <p><span class="white"><strong>Alert</strong></span>This is an alert box for this specific user to read on their profile containing important information. If this content isn't important, please close out this window.</p>
+            <div class="alertBox">              
+                <p><span class="white"><strong>Alert</strong></span>This is an alert box for this specific user to read on their profile containing important information. If this content isn't important, please close out this window.</p><img class="x" src="icons/x.png">
             </div>
             <div>
             <nav class="timelineNav">
@@ -73,7 +76,7 @@
                     <p class="pColor">Twitter<br><span class="numSize">10,345</span></p>                   
                 </div>
                 <div class="Facebook">
-                    <div class="logoBubble"><svg class="facebookSVG" enable-background="new 0 0 56.693 56.693" height="56.963px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="=56.963px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></div>
+                    <div class="logoBubble"><svg class="facebookSVG" enable-background="new 0 0 56.693 56.693" height="56.963px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.963px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg></div>
                     <p class="pColor">Facebook<br><span class="numSize">8,739</span></p>
                 </div>
                 <div class="Google">
