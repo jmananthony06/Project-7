@@ -635,7 +635,7 @@ body button.cancel {
 ****Mobile Query****
 *******************/
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .charts {
         display: grid;
         grid-template-areas: 
