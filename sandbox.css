@@ -34,13 +34,11 @@ h5 {
     display: flex;
     grid-area: nav;  
     background-color: rgb(116, 121, 186); 
-    /* cant add height? why? */
 }
 
 .nav h2 {
     margin-right: auto;
     margin-left: 30px; 
-    /* when margin-left auto - goes all the way right, and margin-right auto goes all the way left - wh?? */
 }
 
 .white {
@@ -68,7 +66,6 @@ h5 {
     width: 25px;
     margin: auto;
     margin-right: 30px; 
-    /* needs green notification color circle near icon upper right of it next to  */
 }
 
 .greenDot {
@@ -96,9 +93,9 @@ h5 {
 }
 
 .profileImg {
-    border-radius: 90%; /* cant get this to shrink any more - why not? also doesnt look right - refer to other css file made manipulating img from css directly */
-    height: 5vh;
-    width: 5vw;
+    border-radius: 50%;
+    /* height: 5vh; */
+    width: 40px;
 }
 
 .nav p {
@@ -120,11 +117,12 @@ h5 {
 
 .sideIcons {
     width: 100%;
-    margin: 10px;
 }
 
 .sideHover {
     position: relative;
+    width: 100%;
+    text-align: center;
 } 
 
 .sideHover::after {
@@ -148,17 +146,19 @@ h5 {
 .membersIcon,
 .visitsIcon,
 .settingsIcon {
-    height: 3vh;
-    width: 3vw;
+    height: 30px;
+    width: 30px;
     margin: 10px;
     margin-top: 22px;
 }
 
-/* add :hover effect with ::before and ::after pseudo CSS and make it green vertical line hugging left side of screen with same height as icon itself with 5-10px space between icon and left side of page as shown in example layout .png file */
+/*************************
+**** DASHBOARD AREA ******
+*************************/
 
 .main {
     grid-area: main;
-    background-color: rgba(0, 0, 0, 0.096);
+    /* background-color: rgba(0, 0, 0, 0.096); */
 }
 
 .grayArea {
@@ -188,13 +188,25 @@ h5 {
     min-width: 25%;
     height: 15px;
     margin: 20px;
-     /* put in magnifying glass inside input element on right side */
 }
 
 input::placeholder {
     color: rgba(0, 0, 0, 0.349);
     font-size: 14px;
 }
+
+.mag {
+    width: 15px; 
+    height: 15px; 
+    background-image: url("./icons/magnifying.png");
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(-50%, -50%);
+}
+
+/******* ALERT BOX *******/ 
 
 .alertBox {
     width: 96%;
@@ -206,17 +218,27 @@ input::placeholder {
     position: relative;
     background-color: rgb(115, 121, 186);
     border-radius: 4px;
-/* insert an interactive 'x' button at the end of the alert message to enable closing out of the prompt  */
 }
 
 .alertBox p {
     text-align: left;
     margin: auto;
     color: white;
+    padding-right: 30px;
 }
 
 .alertBox span {
     margin-right: 12px;
+}
+
+.x {
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    filter: grayscale(100%) brightness(500%);
 }
 
 /*******************************/
@@ -258,11 +280,11 @@ input::placeholder {
     'line line'
     'bar doughnut';
     grid-template-columns: 50% 50%;
-    width: calc(100% - 20px);
+    width: calc(100%);
     height: 600px;
     grid-gap: 1px;
     background-color: gray;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
 }
 
 #myChart,
@@ -305,10 +327,10 @@ input::placeholder {
     width: 100%;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.151);
-} /* nothing fitting properly inside of the 3 social stats containers  */
+}
 
 .socialStats {
-    width: 100%;
+    width: 90%;
     margin-bottom: auto;
 }
 
@@ -318,8 +340,9 @@ input::placeholder {
     width: 21%;
     height: 8vh;
     background-color: rgba(0, 0, 0, 0.060);
-    margin: 25px;
+    margin: 30px;
     margin-bottom: 50px;
+    margin-left: 90px;
     padding: 20px;
     margin-right: auto;
     border-radius: 8px;
@@ -398,7 +421,6 @@ input::placeholder {
 
 .newMembers {
     grid-area: newMembers;
-    /* height: 300px; */
     width: 90%;
     padding: 0 5%;
     background-color: white;
@@ -430,6 +452,19 @@ input::placeholder {
     margin-left: auto;
 }
 
+.caretRelative {
+    position: relative;
+}
+
+.inputRelative {
+    width: 300px;
+    position: relative;
+}
+
+.inputRelative input {
+    width: 80%;
+}
+
 /********** Message User **********/
 
 .userMessages {
@@ -456,7 +491,6 @@ input::placeholder {
 .userMessages textarea {
     width: 91.5%;
     border-color: rgba(0, 0, 0, 0.178);
-    /* cant figure out how to remove manual sizing of textarea size from lower right hand corner of element */
     height: 35%;
     border-radius: 5px;
     resize: none;
@@ -489,27 +523,24 @@ input::placeholder {
     font-size: 14px;
 }
 
-/* tried display flex and flex-wrap: wrap on images in panels and does nothing - need imgs and text to fit in their respective panels and not bleed over into another one or disappear behind other panel elements  */
-
-/* cant get buttons aligned flush from each panel */
-
 .userSettings p {
     margin-top: -7px;
     margin-bottom: 12px;
     margin-left: 27px;
-} /* need on/off toggle section next to <p> text */
+}
 
 .userSettings input {
     display: flex;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 2%;
     width: 92%;
     padding: 8px;
+    margin-left: 27px;
 }
 
 .userSettings button {
-    margin-top: 2%;
-    margin-left: 23.5px;
+    margin-top: 2.2%;
+    margin-left: 27px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -536,6 +567,19 @@ button.onOffButton {
 .profile button {
     margin-left: 53px;
 }
+
+.downCaret {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;   
+    border-top: 10px solid rgba(0, 0, 0, 0.384);
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(-50%, -50%);
+}
+
 /* TOGGLE BUTTONS */
 
 .knob {
@@ -578,52 +622,6 @@ button.onOffButton {
     font-weight: 700;  
 }
 
-.caretRelative {
-    position: relative;
-}
-
-.inputRelative {
-    width: 300px;
-    position: relative;
-}
-
-.inputRelative input {
-    width: 80%;
-}
-
-.mag {
-    width: 15px; 
-    height: 15px; 
-    background-image: url("./icons/magnifying.png");
-    background-size: contain;
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translate(-50%, -50%);
-}
-
-.x {
-    height: 12px;
-    width: 12px;
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translate(-50%, -50%);
-    filter: grayscale(100%) brightness(500%);
-}
-
-.downCaret {
-    width: 0; 
-    height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;   
-    border-top: 10px solid rgba(0, 0, 0, 0.384);
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translate(-50%, -50%);
-} 
-
 body button.cancel {
     background-color: rgba(0, 0, 0, 0.356);
 }
@@ -650,5 +648,70 @@ body button.cancel {
         grid-gap: 1px;
         background-color: gray;
         margin-bottom: 15px;
+    }
+
+    .alertBox {
+        height: 60px;
+        width: 95%;
+    } /* text in alert box overlaps the 'x' */
+
+    .timelineTabs {
+        display: flex;
+    }
+
+    .flexStatsContainer {
+        /* display: flex;
+        flex-wrap: wrap; */
+        flex-direction: column;
+        /* cant find out how to display in column - internet only says how to do in grid and not with other css properties */
+    }
+
+    .Twitter,
+    .Facebook,
+    .Google {
+        width: 60%;
+        height: 50%;
+    }
+
+    .twitterSVG,
+    .facebookSVG,
+    .googleSVG {
+        height: 50%;
+        width: 50%;
+    }
+
+    .panels {
+        grid-template-areas: 
+        'newMembers'
+        'recentActivity'
+        'userMessages'
+        'userSettings';
+    } 
+
+    .userMessages button {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .userSettings input {
+        width: 90%;
+        margin-left: 0;
+        padding: 10px 0;
+        margin: auto;
+    }
+
+    .caretRelative {
+        margin-top: 25px;
+    }
+
+    button.save,
+    button.cancel {
+        width: 90.5%;
+    }
+
+    .sideIcons {
+        
     }
 }
