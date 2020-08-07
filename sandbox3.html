@@ -36,8 +36,8 @@
                         </div>
                     </div>
             </div>
-            <div class="alertBox">              
-                <p><span class="white"><strong>Alert</strong></span>This is an alert box for this specific user to read on their profile containing important information. If this content isn't important, please close out this window.</p><img class="x" src="icons/x.png">
+            <div class="alertBox" id="alertBox">              
+                <p><span class="white"><strong>Alert</strong></span>This is an alert box for this specific user to read on their profile containing important information. If this content isn't important, please close out this window.</p><img class="x" id="alertX" src="icons/x.png">
             </div>
             <div>
             <nav class="timelineNav">
@@ -185,7 +185,14 @@
 	                    </button>
                     </p> 
                     <div class="caretRelative">
-                        <input type="text" placeholder="Select Timezone"><div class="downCaret"></div>
+                        <select type="text" placeholder="Select Timezone">
+                            <option value="Central Daylight Time">Central Daylight Time</option>
+                            <option value="Mountain Daylight Time">Mountain Daylight Time</option>
+                            <option value="Mountain Standard Time">Mountain Standard Time</option>
+                            <option value="Pacific Daylight Time">Pacific Daylight Time</option>
+                            <option value="Alaska Daylight Time">Alaska Daylight Time</option>
+                            <option value="Hawaii-Aleutian Standard Time">Hawaii-Aleutian Standard Time</option>
+                        </select>
                     </div>
                     <button class="save">Save</button>
                     <button class="cancel">Cancel</button>

@@ -1,6 +1,10 @@
 /* * {
     outline: 1px solid red;
 } */
+@media(max-width: 1024px) {
+    
+
+}
 
 body {
     margin: 0;
@@ -60,12 +64,26 @@ h5 {
 .bellIcon {
     position: absolute;
     transform: translate(-50%, -50%);
+    transform-origin: left top;
     top: 50%;
     left: 50%;
     height: 25px;
     width: 25px;
     margin: auto;
     margin-right: 30px; 
+}
+
+.bellIcon:hover {
+    animation: ring 1s linear;
+} 
+
+@keyframes ring {
+    0% {transform: rotate(0deg) translate(-50%, -50%);;}
+    20% {transform: rotate(45deg) translate(-50%, -50%);;}
+    40%{transform: rotate(-45deg) translate(-50%, -50%);;}
+    60%{transform: rotate(15deg) translate(-50%, -50%);;}
+    80%{transform: rotate(-15deg) translate(-50%, -50%);;}
+    100%{transform: rotate(0deg) translate(-50%, -50%);;}
 }
 
 .greenDot {
@@ -186,6 +204,7 @@ h5 {
     padding: 5px;
     border-radius: 5px;
     min-width: 25%;
+    width: 80%;
     height: 15px;
     margin: 20px;
 }
@@ -403,13 +422,17 @@ input::placeholder {
 
 .panels {
     display: grid;
+    grid-template-columns: 50% 50%;
     grid-template-areas: 
     'newMembers recentActivity'
     'userMessages userSettings';
     width: 100%;
-    grid-gap: 1px;
+    grid-gap: 2x;
 }
 
+.panels > * {
+    outline: 1px solid rgba(128, 128, 128, 0.205);
+}
 /********** New Members *********/
 
 .memberBoxes {
@@ -461,8 +484,11 @@ input::placeholder {
     position: relative;
 }
 
-.inputRelative input {
-    width: 80%;
+.caretRelative select {
+    width: 95%;
+    margin-left: 3%;
+    margin-top: 10px;
+    height: 30px;
 }
 
 /********** Message User **********/
@@ -626,6 +652,12 @@ body button.cancel {
     background-color: rgba(0, 0, 0, 0.356);
 }
 
+body button.save,
+body button.cancel {
+    margin-left: 25px;
+    margin-top: 32px;
+}
+
 .horizontalBreakLine {
     border-bottom: .5px solid rgba(0, 0, 0, 0.123);
     width: 100%;
@@ -695,7 +727,7 @@ body button.cancel {
         justify-content: center;
     }
     
-    .userSettings input {
+    .userSettings select {
         width: 90%;
         margin-left: 0;
         padding: 10px 0;
