@@ -19,11 +19,13 @@ for(let i = 0; i < onOffButtons.length; i++) {
 //EMPTY INPUT ALERT
 
 function validateForm() {
-if(emptyField == null || emptyField == "") {
-    emptyField.innerHTML = "Please fill in this field";
+if (emptyField.value == null || emptyField.value == "") {
+    emptyField.value = "Please fill in this field";
     return false;
     }
     else {
         return true;
     }
-} //this doesn't work but also return no errors - I don't get it
+} 
+
+validateForm(); //this doesn't work but also return no errors - I don't get it
