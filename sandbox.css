@@ -483,7 +483,6 @@ input::placeholder {
 .caretRelative select {
     width: 95%;
     margin-left: 3%;
-    margin-top: 10px;
     height: 30px;
 }
 
@@ -660,14 +659,74 @@ body button.cancel {
 }
 
 /*******************
-****Mobile Query****
+***** QUERIES ******
 *******************/
 
-@media(min-width: 1024px) {
-    
-    
+/* 1024PX QUERY */ /* squared away! just chart fixes needed for all queries */
 
+@media(min-width: 1024px) {
+    .alertBox {
+        width: 96%;
+        height: 35px;
+        margin: auto;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        padding: 6px;
+        position: relative;
+        background-color: rgb(115, 121, 186);
+        border-radius: 4px;
+    }
+    
+    .alertBox p {
+        text-align: left;
+        margin: auto;
+        color: white;
+        padding-right: 30px;
+    }
+    
+    .alertBox span {
+        margin-right: 12px;
+    }
+
+    .flexStatsContainer {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+    }
+
+    .Twitter,
+    .Facebook,
+    .Google {
+        width: 28%;
+        height: 50%;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .twitterSVG,
+    .facebookSVG,
+    .googleSVG {
+        height: 50%;
+        width: 50%;
+    }
+
+    .userMessages button {
+        margin-left: 19px;
+    }
+
+    button.save,
+    button.cancel {
+        width: 40%;
+        margin-right: 18px;
+    }
+
+    .userSettings select {
+        margin-top: 4.9%;
+    }
 }
+
+/* 768PX QUERY*/ /* check panels portion for issue commentary */
 
 @media (max-width: 768px) {
     .charts {
@@ -687,24 +746,24 @@ body button.cancel {
     .alertBox {
         height: 60px;
         width: 95%;
-    } /* text in alert box overlaps the 'x' */
+    }
 
     .timelineTabs {
         display: flex;
     }
 
     .flexStatsContainer {
-        /* display: flex;
-        flex-wrap: wrap; */
         flex-direction: column;
-        /* cant find out how to display in column - internet only says how to do in grid and not with other css properties */
     }
 
     .Twitter,
     .Facebook,
     .Google {
-        width: 60%;
+        width: 50%;
         height: 50%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .twitterSVG,
@@ -716,11 +775,12 @@ body button.cancel {
 
     .panels {
         grid-template-areas: 
-        'newMembers'
+        'newMembers' 
         'recentActivity'
-        'userMessages'
+        'userMessages' 
         'userSettings';
-    } 
+        width: 100%; /* issues with this in this query - 100% only makes grid in this query half of the container width desired and 200% puts it over the edge giving too much white space on right of container then 190% isn't the full enough container width - wtf */
+    }
 
     .userMessages button {
         margin: auto;
@@ -731,9 +791,9 @@ body button.cancel {
     
     .userSettings select {
         width: 90%;
-        margin-left: 0;
+        height: 40px;
+        margin-left: 25px;
         padding: 10px 0;
-        margin: auto;
     }
 
     .caretRelative {
@@ -743,9 +803,5 @@ body button.cancel {
     button.save,
     button.cancel {
         width: 90.5%;
-    }
-
-    .sideIcons {
-        
     }
 }
