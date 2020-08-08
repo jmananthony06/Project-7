@@ -6,7 +6,7 @@ var myChart = new Chart(ctx, {
       datasets: [
         {
           label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+          data: [500, 1000, 1500, 2000, 2500], 
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",
@@ -50,7 +50,7 @@ var myChart = new Chart(ctx, {
       datasets: [
         {
           label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+          data: [50, 100, 150, 200, 250],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
             "rgba(54, 162, 235, 0.2)",

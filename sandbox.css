@@ -1,10 +1,6 @@
 /* * {
     outline: 1px solid red;
 } */
-@media(max-width: 1024px) {
-    
-
-}
 
 body {
     margin: 0;
@@ -666,6 +662,12 @@ body button.cancel {
 /*******************
 ****Mobile Query****
 *******************/
+
+@media(min-width: 1024px) {
+    
+    
+
+}
 
 @media (max-width: 768px) {
     .charts {
