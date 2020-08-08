@@ -28,4 +28,9 @@ if (emptyField.value == null || emptyField.value == "") {
     }
 } 
 
-validateForm(); //this doesn't work but also return no errors - I don't get it
+emptyField.addEventListener("click", () => {
+    validateForm();
+});
+
+
+//this doesn't work but also return no errors - I don't get it - event listener was suggested from someone in community who looked at my code and no errors and is able to get it fully functional on their end but still cant get it to work on my end - sad face

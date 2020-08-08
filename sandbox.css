@@ -664,7 +664,7 @@ body button.cancel {
 
 /* 1024PX QUERY */ /* squared away! just chart fixes needed for all queries */
 
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
     .alertBox {
         width: 96%;
         height: 35px;

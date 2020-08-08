@@ -2,7 +2,7 @@ var ctx = document.getElementById("myChart").getContext("2d");
 var myChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
       datasets: [
         {
           label: "# of Votes",
@@ -92,26 +92,19 @@ var myChart = new Chart(ctx, {
   var myChart = new Chart(ctx, {
       type: "doughnut",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [
           {
             label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3],
             backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)",
+              "rgba(102, 192, 136, 1)",
+              "rgba(87, 169, 182, 1)",
+              "rgba(98, 112, 179, 1)",
             ],
             borderColor: [
-              "rgba(255, 99, 132, 1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)",
+              "rgba(102, 192, 136, 1)",
+              "rgba(87, 169, 182, 1)",
+              "rgba(98, 112, 179, 1)",
             ],
             borderWidth: 1,
           },
