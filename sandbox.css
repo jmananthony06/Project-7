@@ -314,7 +314,7 @@ input::placeholder {
 .line {
     grid-area: line;
     height: 300px;
-    background-color: white; 
+    background-color: white;
 }
 
 .bar {
@@ -662,9 +662,9 @@ body button.cancel {
 ***** QUERIES ******
 *******************/
 
-/* 1024PX QUERY */ /* squared away! just chart fixes needed for all queries */
+/* 1024PX QUERY */
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) { 
     .alertBox {
         width: 96%;
         height: 35px;
@@ -729,6 +729,11 @@ body button.cancel {
 /* 768PX QUERY*/ /* check panels portion for issue commentary */
 
 @media (max-width: 768px) {
+
+    .line {
+        padding-top: 15px;
+    }
+
     .charts {
         display: grid;
         grid-template-areas: 
@@ -741,6 +746,7 @@ body button.cancel {
         grid-gap: 1px;
         background-color: gray;
         margin-bottom: 15px;
+        border-bottom: 5px solid rgb(128, 128, 128);
     }
 
     .alertBox {
@@ -779,7 +785,8 @@ body button.cancel {
         'recentActivity'
         'userMessages' 
         'userSettings';
-        width: 100%; /* issues with this in this query - 100% only makes grid in this query half of the container width desired and 200% puts it over the edge giving too much white space on right of container then 190% isn't the full enough container width - wtf */
+        width: 100%;
+        grid-template-columns: 100%;
     }
 
     .userMessages button {

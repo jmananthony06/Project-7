@@ -5,8 +5,9 @@ var myChart = new Chart(ctx, {
       labels: ["16-22", "23-29", "30-5", "6-12", "13-19", "20-26", "27-3", "4-10", "11-17", "18-24", "25-31"],
       datasets: [
         {
-          label: "# of Votes",
-          data: [500, 1000, 1500, 2000, 2500],
+          // label: null,
+          lineTension: 0,
+          data: [0, 500, 1000, 750, 1250, 1750, 1250, 1500, 1000, 1500, 2000, 1500, 2000],
           backgroundColor: [
             "rgba(98, 112, 179, 0.2)",
             "rgba(98, 112, 179, 0.2)",
@@ -30,11 +31,14 @@ var myChart = new Chart(ctx, {
     options: {
       maintainAspectRatio: true,
       responsive: true,
+      legend: {display: false},
       scales: {
         yAxes: [
           {
             ticks: {
               beginAtZero: true,
+              suggestedMin: 0,
+              suggestedMax: 2500,
             },
           },
         ],
@@ -50,7 +54,7 @@ var myChart = new Chart(ctx, {
       datasets: [
         {
           // label: "# of Votes", //undefined but when commented out doesn't disappear, why?
-          data: [50, 100, 150, 200, 250],
+          data: [75, 110, 175, 125, 225, 180, 115],
           backgroundColor: [
             "rgb(98, 112, 179)",
             "rgb(98, 112, 179)",
@@ -76,6 +80,7 @@ var myChart = new Chart(ctx, {
     options: {
       maintainAspectRatio: true,
       responsive: true,
+      legend: {display: false},
       scales: {
         yAxes: [
           {
@@ -92,9 +97,10 @@ var myChart = new Chart(ctx, {
   var myChart = new Chart(ctx, {
       type: "doughnut",
       data: {
+        labels: ['Phones', 'Tablets', 'Desktop'],
         datasets: [
           {
-            label: "# of Votes",
+            label: ["# of Votes"],
             data: [12, 19, 3],
             backgroundColor: [
               "rgba(102, 192, 136, 1)",
@@ -113,12 +119,23 @@ var myChart = new Chart(ctx, {
       options: {
         maintainAspectRatio: true,
         responsive: true,
+        legend: {
+          align: "center",
+                position: 'right',
+                display: true,
+                //labels: {boxWidth: 20}
+              },
         scales: {
           yAxes: [
             {
-              ticks: {
-                beginAtZero: true,
-              },
+              ticks: {display: false},
+              gridLines: {display: false}
+            },
+          ],
+          xAxes: [
+            {
+              ticks: {display: false},
+              gridLines: {display: false}
             },
           ],
         },

@@ -18,19 +18,17 @@ for(let i = 0; i < onOffButtons.length; i++) {
 
 //EMPTY INPUT ALERT
 
-function validateForm() {
-if (emptyField.value == null || emptyField.value == "") {
-    emptyField.value = "Please fill in this field";
-    return false;
-    }
-    else {
-        return true;
-    }
-} 
-
-emptyField.addEventListener("click", () => {
-    validateForm();
+sendButton.addEventListener("click", () => {
+    var inputs = ['sendInput', 'sendText'];
+    inputs.map(item => {
+        var e = document.getElementById(item);
+        var val = e.value;
+        if(!val.trim()) {
+            e.style.border = "2px solid red"; //if the value is empty, give it a red border
+        } else {
+            e.style.border = ""; // if its not empty, it's good to go
+        }
+    });
 });
 
-
-//this doesn't work but also return no errors - I don't get it - event listener was suggested from someone in community who looked at my code and no errors and is able to get it fully functional on their end but still cant get it to work on my end - sad face
+// this event listener throws red border when appropriate criteria isn't met 

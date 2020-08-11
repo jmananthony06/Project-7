@@ -49,9 +49,9 @@
                     <li>Monthly</li>
                 </ul>
             </nav>
-            <div class="charts"> <!-- shrink charts to better size - looks stretched now -->
+            <div class="charts"> <!-- shrink charts to better size - looks stretched in desktop query-->
                 <div class="line">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart"></canvas> <!-- WHERE ARE THESE DEFAULT STYLES AT?!?! -->
                 </div>
                 <div class="bar">
                     <h5>DAILY TRAFFIC</h5>
@@ -168,9 +168,9 @@
                 </div>
                 <div class="userMessages">
                     <h5>MESSAGE USER</h5>
-                    <input type="text" placeholder="Search for User">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Message for User"></textarea>
-                    <button id="emptyField">Send</button>
+                    <input type="text" id="sendInput" placeholder="Search for User">
+                    <textarea name="" id="sendText" cols="30" rows="10" placeholder="Message for User"></textarea>
+                    <button id="sendButton">Send</button>
                 </div>
                 <div class="userSettings">
                     <h5>SETTINGS</h5>
